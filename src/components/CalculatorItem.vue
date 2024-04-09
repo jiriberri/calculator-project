@@ -37,7 +37,7 @@ export default {
 
   methods: {
     clear() {
-      this.current = '0';
+      this.current = '';
     },
 
     sign(){
@@ -81,7 +81,7 @@ export default {
     },
 
     minus() {
-      this.operator = (a, b) => b - a;
+      this.operator = (a, b) => a - b;
       this.setPrevious();
     },
 
@@ -91,7 +91,7 @@ export default {
     },
 
     equal() {
-      this.current = this.operator(parseFloat(this.current), parseFloat(this.previous));
+      this.current = this.operator( parseFloat(this.previous), parseFloat(this.current));
     }
   }
 }
